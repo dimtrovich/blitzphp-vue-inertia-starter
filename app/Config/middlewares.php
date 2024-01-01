@@ -27,6 +27,7 @@ return [
      * @var array<string|Closure|class-string>
      */
     'globals' => [
+        'body-parser',
         Inertia::class
     ],
 
