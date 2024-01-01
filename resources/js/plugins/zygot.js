@@ -6,7 +6,7 @@ export default function (app) {
 		config.defaults = {};
 	}
 
-	config.defaults.routeNamePrefix = '';
+	config.defaults.routeNamePrefix = import.meta.env.VITE_ZYGOT_ROUTENAME_PREFIX || '';
 
 	app.use(ZygotVue, config);
 	
