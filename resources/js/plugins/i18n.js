@@ -27,7 +27,7 @@ function loadLocaleMessages () {
 	const files = import.meta.glob('../translations/**/*.js', { eager: true });
 
 	Object.entries(files).forEach(([path, definition]) => {
-		const locale = path.split('/')[1]
+		const locale = path.split('/')[2]
 		if (!messages[locale]) {
 			messages[locale] = {}
 		}
