@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+
+defineOptions({ name: 'HomePage' })
 
 const count = ref(0)
 </script>

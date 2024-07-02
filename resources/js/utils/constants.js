@@ -4,18 +4,18 @@
  * @return {string}
  */
 export function apiUrl() {
-	return import.meta.env.VITE_API_URL || 'http://localhost/api';
+	return import.meta.env.VITE_API_URL || 'http://localhost/api'
 }
 
 /**
  * @var {string} APP_NAME Nom de l'application
  */
-export const APP_NAME = import.meta.env.VITE_APP_NAME || 'BlitzPHP Inertia Vue Starter Kit';
+export const APP_NAME = import.meta.env.VITE_APP_NAME || 'BlitzPHP Inertia Vue Starter Kit'
 
 /**
  * @var {string} APP_ID ID de l'application
  */
-export const APP_ID = import.meta.env.VITE_APP_ID || APP_NAME.toLowerCase().replace(/\S+/, '');
+export const APP_ID = import.meta.env.VITE_APP_ID || APP_NAME.toLowerCase().replace(/\s/g, '')
 
 /**
  * @var {string[]} AVAILABLE_LOCALES Liste des langues autorisées

@@ -1,5 +1,5 @@
-import { $storage } from "@/plugins/storage";
-import { AVAILABLE_LOCALES } from "./constants";
+import { $storage } from '@/plugins/storage'
+import { AVAILABLE_LOCALES } from './constants'
 
 /**
  * Recupere la langue a utilier par defaut
@@ -10,10 +10,10 @@ export function findLocale() {
 	let lang = $storage.cookie.get('locale')
 
 	if (lang == null || lang == undefined || !lang || typeof lang == 'undefined') {
-		lang = (window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage).substr(0,2).toLowerCase();
+		lang = (window.navigator.language || window.navigator.userLanguage || window.navigator.browserLanguage).substr(0,2).toLowerCase()
 	}
 
-	if (! AVAILABLE_LOCALES.includes(lang)) {
+	if (!AVAILABLE_LOCALES.includes(lang)) {
 		lang = import.meta.env.VITE_DEFAULT_LOCALE || 'fr'
 	}
 
@@ -28,10 +28,10 @@ export function findLocale() {
  * @returns {Object}
  */
 export function groupBy(array, key) {
-    return array.reduce(function (r, a) {
-        r[a[key]] = r[a[key]] || [];
-        r[a[key]].push(a);
+    return array.reduce(function(r, a) {
+        r[a[key]] = r[a[key]] || []
+        r[a[key]].push(a)
         
-        return r;
-    }, Object.create(null));
+        return r
+    }, Object.create(null))
 }

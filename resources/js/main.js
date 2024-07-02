@@ -1,22 +1,23 @@
-import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
-import { APP_NAME } from './utils/constants';
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/inertia-vue3'
 
-import './assets/css/app.css';
+import { APP_NAME } from './utils/constants'
 
-import MainLayout from "./layouts/Main.vue"
+import './assets/css/app.css'
+
 import initPlugin from './plugins'
+import MainLayout from './layouts/Main.vue'
 
 createInertiaApp({
-	resolve: async (name) => {
-		const pages = import.meta.glob('./views/**/*.vue');
-		let page =  (await pages[`./views/${name}.vue`]()).default;
+	async resolve(name) {
+		const pages = import.meta.glob('./views/**/*.vue')
+		const { default: page } =  await pages[`./views/${name}.vue`]()
 
 		page.layout ??= MainLayout
     	return page
 	},
-	title: title => title ? `${title} - ${ APP_NAME }` : APP_NAME,
 	setup({ el, App, props, plugin }) {
 		initPlugin(createApp({ render: () => h(App, props) }).use(plugin)).mount(el)
 	},
-});
+	title: title => title ? `${title} - ${ APP_NAME }` : APP_NAME,
+})
