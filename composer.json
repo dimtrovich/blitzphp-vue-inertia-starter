@@ -1,6 +1,4 @@
 {
-    "name": "blitz-php/app-skeleton",
-    "description": "Skeleton App for Blitz framework",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -16,10 +14,10 @@
         }
     },
     "require": {
-        "blitz-php/framework": "^0.10",
+        "blitz-php/framework": "^0.11",
         "blitz-php/inertia": "^0.1.2",
         "blitz-php/schild": "^1.4",
-        "dimtrovich/blitzphp-vite": "dev-main",
+        "dimtrovich/blitzphp-vite": "^1.0",
         "dimtrovich/zygot": "dev-main"
     },
     "require-dev": {

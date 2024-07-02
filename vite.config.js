@@ -1,12 +1,21 @@
-import { defineConfig, loadEnv } from "vite";
-import vue from "@vitejs/plugin-vue";
-import path from "path";
+import { defineConfig, loadEnv } from 'vite'
+import { BootstrapVueNextResolver } from 'bootstrap-vue-next'
+import Components from 'unplugin-vue-components/vite'
+import vue from '@vitejs/plugin-vue'
+import VueDevTools from 'vite-plugin-vue-devtools'
+import path from 'path'
 
 export default defineConfig(() => {
 	const env = loadEnv(null, process.cwd());
 
 	return {
-		plugins: [vue()],
+		plugins: [
+			vue(),
+			VueDevTools(),
+			Components({
+				resolvers: [BootstrapVueNextResolver()],
+			  }),
+		],
 		build: {
 			emptyOutDir: false,
 			outDir: "./public/",
@@ -29,3 +38,4 @@ export default defineConfig(() => {
 		},
 	};
 });
+
