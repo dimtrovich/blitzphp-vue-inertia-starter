@@ -29,6 +29,15 @@ return [
     */
     'base_url' => env('app.baseURL', ''),
 
+	/*
+    | Nom de l'application
+    |
+    | Cette valeur est le nom de votre application. 
+	| Cette valeur est utilisée lorsque le framework doit placer le nom de l'application 
+	| dans une notification ou à un autre endroit requis par l'application ou ses paquets.
+    */
+    'name' => env('app.name', 'BlitzPHP'),
+
     /*
     | Cette option permet d'ajouter un suffixe à toutes les URL générées par le framework
     | Pour plus d'informations, veuillez consulter le guide de l'utilisateur :

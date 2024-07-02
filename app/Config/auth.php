@@ -25,6 +25,11 @@ use BlitzPHP\Schild\Authentication\Passwords\ValidatorInterface;
 use BlitzPHP\Schild\Models\UserModel;
 
 return [
+    /**
+     * --------------------------------------------------------------------
+     * Fichiers de vues
+     * --------------------------------------------------------------------
+     */
     'views' => [
         'login'                       => '\BlitzPHP\Schild\Views\login',
         'register'                    => '\BlitzPHP\Schild\Views\register',
@@ -480,7 +485,7 @@ return [
                 $final_url = $url;
                 break;
 
-            case link_to($url) !== false: // L'URL est une route nommée
+            case !empty(link_to($url)): // L'URL est une route nommée
                 $final_url = rtrim(url_to($url), '/ ');
                 break;
 
